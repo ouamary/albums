@@ -8,6 +8,9 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * The class defines the module that performs network calls.
+ */
 @Module
 public class RemoteModule {
     String url;
