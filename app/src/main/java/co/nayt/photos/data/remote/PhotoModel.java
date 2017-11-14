@@ -1,7 +1,7 @@
 package co.nayt.photos.data.remote;
 
 /**
- * This is the model representation of a photo from the web service.
+ * This is the model representation of a photo from the webservice.
  */
 public class PhotoModel {
 

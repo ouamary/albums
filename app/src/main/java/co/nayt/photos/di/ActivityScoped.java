@@ -1,4 +1,16 @@
 package co.nayt.photos.di;
 
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+import javax.inject.Scope;
+
+/**
+ * The ActivityScoped annotation declaration.
+ */
+@Documented
+@Scope
+@Retention(RetentionPolicy.RUNTIME)
 public @interface ActivityScoped {
 }

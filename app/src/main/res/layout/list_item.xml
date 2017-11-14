@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="92dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:photos="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        photos:layout_constraintBottom_toBottomOf="parent"
+        photos:layout_constraintLeft_toLeftOf="parent"
+        photos:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/tv_top_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="92dp"
+        android:layout_marginStart="92dp"
+        photos:layout_constraintBottom_toTopOf="@+id/tv_bottom_text"
+        photos:layout_constraintLeft_toLeftOf="parent"
+        tools:text="Id: 1"/>
+
+    <TextView
+        android:id="@+id/tv_bottom_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="92dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        photos:layout_constraintLeft_toLeftOf="parent"
+        photos:layout_constraintBottom_toBottomOf="parent"
+        photos:layout_constraintTop_toTopOf="parent"
+        photos:layout_constraintRight_toRightOf="parent"
+        tools:text="Reprehenderit est deserunt velit ipsam"/>
+
+    <View
+        android:id="@+id/v_blank_divider"
+        android:layout_width="92dp"
+        android:layout_height="1dp"
+        android:background="@android:color/transparent"
+        photos:layout_constraintLeft_toLeftOf="parent"
+        photos:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/v_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/lightGray"
+        photos:layout_constraintLeft_toRightOf="@+id/v_blank_divider"
+        photos:layout_constraintBottom_toBottomOf="parent"/>
+</android.support.constraint.ConstraintLayout>
