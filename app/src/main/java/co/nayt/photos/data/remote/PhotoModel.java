@@ -11,6 +11,12 @@ public class PhotoModel {
     private String url;
     private String thumbnailUrl;
 
+    public PhotoModel(int id, String title, String thumbnailUrl) {
+        this.id = id;
+        this.title = title;
+        this.thumbnailUrl = thumbnailUrl;
+    }
+
     public int getAlbumId() {
         return albumId;
     }

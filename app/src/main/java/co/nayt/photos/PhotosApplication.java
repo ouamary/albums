@@ -1,5 +1,6 @@
 package co.nayt.photos;
 
+import co.nayt.photos.data.local.LocalModule;
 import co.nayt.photos.data.remote.RemoteModule;
 import co.nayt.photos.data.utils.DataUtils;
 import co.nayt.photos.di.AppComponent;
@@ -17,6 +18,7 @@ public class PhotosApplication extends DaggerApplication {
         AppComponent component = DaggerAppComponent.builder()
                 .application(this)
                 .remoteModule(new RemoteModule(DataUtils.BASE_URL))
+                .localModule(new LocalModule(this))
                 .build();
 
         component.inject(this);

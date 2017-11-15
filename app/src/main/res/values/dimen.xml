@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="list_height">92dp</dimen>
+    <dimen name="left_text_margin">@dimen/list_height</dimen>
+    <dimen name="divider_width">@dimen/list_height</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="left_margin">16dp</dimen>
+    <dimen name="right_margin">@dimen/left_margin</dimen>
+    <dimen name="photo_size">60dp</dimen>
+</resources>

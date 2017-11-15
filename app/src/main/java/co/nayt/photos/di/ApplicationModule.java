@@ -10,7 +10,7 @@ import dagger.Module;
  * This class binds the Context to the Application.
  */
 @Module
-public abstract class ApplicationModule {
+abstract class ApplicationModule {
     @Binds
     abstract Context bindContext(Application application);
 }

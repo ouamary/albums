@@ -10,7 +10,7 @@ import dagger.android.ContributesAndroidInjector;
  * with its main sub component PhotosListModule.
  */
 @Module
-public abstract class ActivityBindingModule {
+abstract class ActivityBindingModule {
     @ActivityScoped
     @ContributesAndroidInjector(modules = PhotosListModule.class)
     abstract PhotosListActivity photosListActivity();

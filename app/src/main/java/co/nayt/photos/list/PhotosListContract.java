@@ -4,6 +4,7 @@ import java.util.List;
 
 import co.nayt.photos.BasePresenter;
 import co.nayt.photos.BaseView;
+import co.nayt.photos.data.local.Photo;
 import co.nayt.photos.data.remote.PhotoModel;
 
 /**
@@ -12,7 +13,7 @@ import co.nayt.photos.data.remote.PhotoModel;
  */
 interface PhotosListContract {
     interface View extends BaseView<Presenter> {
-        void showPhotos(List<PhotoModel> photos);
+        void showPhotos(List<Photo> photos);
 
         void showLoadingFailure();
     }
