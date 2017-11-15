@@ -5,6 +5,7 @@ import android.app.Application;
 import javax.inject.Singleton;
 
 import co.nayt.photos.PhotosApplication;
+import co.nayt.photos.data.local.LocalModule;
 import co.nayt.photos.data.remote.RemoteModule;
 import dagger.BindsInstance;
 import dagger.Component;
@@ -20,6 +21,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
 @Singleton
 @Component(modules = {
         RemoteModule.class,
+        LocalModule.class,
         ApplicationModule.class,
         ActivityBindingModule.class,
         AndroidSupportInjectionModule.class
@@ -37,6 +39,8 @@ public interface AppComponent extends AndroidInjector<DaggerApplication> {
         Builder application(Application application);
 
         Builder remoteModule(RemoteModule remoteModule);
+
+        Builder localModule(LocalModule localModule);
 
         AppComponent build();
     }

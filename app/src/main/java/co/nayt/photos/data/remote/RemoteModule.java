@@ -9,11 +9,11 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * The class defines the module that performs network calls.
+ * The class defines a module providing a PhotosService.
  */
 @Module
 public class RemoteModule {
-    String url;
+    private String url;
 
     public RemoteModule(String url) {
         this.url = url;
@@ -21,7 +21,7 @@ public class RemoteModule {
 
     @Provides
     @Singleton
-    public PhotosService provideTypicodeService() {
+    PhotosService provideTypicodeService() {
         return new Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())

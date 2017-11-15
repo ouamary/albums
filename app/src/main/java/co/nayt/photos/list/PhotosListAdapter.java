@@ -15,19 +15,21 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import co.nayt.photos.R;
+import co.nayt.photos.data.local.Photo;
 import co.nayt.photos.data.remote.PhotoModel;
+import co.nayt.photos.data.utils.DataUtils;
 
 /**
  * This class will help the RecyclerView laying out our
  * list of photos. Its ViewHolder uses Butterknife to
  * inflate its elements.
  */
-public class PhotosListAdapter extends RecyclerView.Adapter<PhotosListAdapter.ViewHolder> {
+class PhotosListAdapter extends RecyclerView.Adapter<PhotosListAdapter.ViewHolder> {
 
-    private List<PhotoModel> mPhotosList;
+    private List<Photo> mPhotosList;
     private Context mContext;
 
-    PhotosListAdapter(Context context, List<PhotoModel> items) {
+    PhotosListAdapter(Context context, List<Photo> items) {
         this.mContext = context;
         this.mPhotosList = items;
     }
@@ -42,12 +44,17 @@ public class PhotosListAdapter extends RecyclerView.Adapter<PhotosListAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final PhotoModel item = getItem(position);
+        final Photo item = getItem(position);
 
-        holder.mTopText.setText(String.valueOf(item.getId()));
+        holder.mTopText.setText(item.getId());
         holder.mBottomText.setText(item.getTitle());
 
-        Picasso.with(mContext).load(item.getThumbnailUrl()).resize(80, 80).into(holder.mPhotoView);
+        Picasso.with(mContext)
+                .load(item.getUrl())
+                .placeholder(R.mipmap.ic_dl_placeholder)
+                .error(R.mipmap.ic_err_placeholder)
+                .resize(DataUtils.RESIZE_DIMEN, DataUtils.RESIZE_DIMEN)
+                .into(holder.mPhotoView);
     }
 
     @Override
@@ -55,12 +62,12 @@ public class PhotosListAdapter extends RecyclerView.Adapter<PhotosListAdapter.Vi
         return mPhotosList.size();
     }
 
-    public void setItems(List<PhotoModel> photosList) {
+    void setItems(List<Photo> photosList) {
         this.mPhotosList = photosList;
         notifyDataSetChanged();
     }
 
-    private PhotoModel getItem(int position) {
+    private Photo getItem(int position) {
         return mPhotosList.get(position);
     }
 
